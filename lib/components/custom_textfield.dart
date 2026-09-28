@@ -7,6 +7,7 @@ class CustomTextfield extends StatelessWidget {
   final bool isPassword;
   final bool isNumber;
 
+
   const CustomTextfield({
     super.key,
     required this.myHint,
