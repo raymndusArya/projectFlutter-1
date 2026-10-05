@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project1/components/calculator_page.dart';
+import 'package:project1/pages/calculator_page.dart';
+import 'package:project1/pages/registration_page.dart';
 import 'controllers/calculator_controller.dart';
+import 'package:project1/routes.dart';
 
 
 void main () {
@@ -15,7 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        home: (CalculatorPage()),
+       title: 'Belajar Flutter Raymundus Arya',
+       initialRoute: Routes.registration,
+       getPages: Routes.myPages,
     );
   }
 }

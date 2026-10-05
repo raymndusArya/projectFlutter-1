@@ -1,6 +1,6 @@
 import 'package:project1/controllers/calculator_controller.dart';
-import 'custom_textfield.dart';
-import 'custom_operator_button.dart';
+import '../components/custom_textfield.dart';
+import '../components/custom_operator_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
