@@ -46,7 +46,7 @@ class ConfirmRegistrationPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Data Pendaftaran",
+              "Registration Data",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -55,7 +55,7 @@ class ConfirmRegistrationPage extends StatelessWidget {
             ),
             SizedBox(height: 4),
             Text(
-              "Pastikan data kamu sudah benar",
+              "Please make sure your data is correct before proceeding.",
               style: TextStyle(color: Colors.grey),
             ),
             SizedBox(height: 16),
@@ -73,11 +73,11 @@ class ConfirmRegistrationPage extends StatelessWidget {
                   Divider(),
                   baris(Icons.email, "Email", controller.email),
                   Divider(),
-                  baris(Icons.phone, "No. WA", controller.no_wa),
+                  baris(Icons.phone, "Phone Number", controller.no_wa),
                   Divider(),
-                  baris(Icons.wc, "Jenis Kelamin", controller.jenis_kelamin),
+                  baris(Icons.wc, "Gender", controller.jenis_kelamin),
                   Divider(),
-                  baris(Icons.self_improvement, "Agama", controller.agama),
+                  baris(Icons.self_improvement, "Religion", controller.agama),
                 ],
               ),
             ),
@@ -93,7 +93,7 @@ class ConfirmRegistrationPage extends StatelessWidget {
                 onPressed: () {
                   Get.back();
                 },
-                child: Text("ok"),
+                child: Text("OK"),
               ),
             ),
           ],

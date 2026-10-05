@@ -37,7 +37,7 @@ class RegistrationPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  "Buat Akun",
+                  "Create an Account",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
@@ -47,7 +47,7 @@ class RegistrationPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  "Isi data di bawah ini untuk mendaftar",
+                  "Fill in the form below to create your account",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
                 ),
@@ -76,7 +76,7 @@ class RegistrationPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 16),
                         CustomTextfield(
-                          myHint: "Nomor WA",
+                          myHint: "Phone Number",
                           txtController: txtNoWa,
                           isNumber: true,
                         ),
@@ -85,7 +85,7 @@ class RegistrationPage extends StatelessWidget {
                           () => DropdownButtonFormField<String>(
                             value: controller.jenisKelamin.value,
                             isExpanded: true,
-                            hint: const Text("Pilih jenis kelamin"),
+                            hint: const Text("Please Select Your Gender"),
                             decoration: InputDecoration(
                               prefixIcon: const Icon(Icons.wc_outlined),
                               filled: true,
@@ -125,7 +125,7 @@ class RegistrationPage extends StatelessWidget {
                         Obx(
                           () => DropdownButtonFormField<String>(
                             value: controller.agama.value,
-                            hint: Text("Pilih agama"),
+                            hint: Text("Please Select Your Religion"),
                             isExpanded: true,
                             decoration: InputDecoration(
                               prefixIcon: Icon(Icons.self_improvement),

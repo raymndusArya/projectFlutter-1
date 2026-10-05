@@ -9,10 +9,10 @@ class RegistrationController extends GetxController {
     final agama = RxnString();
     final daftarAgama = [
       "Islam",
-      "Kristen",
-      "Katolik",
+      "Christianity",
+      "Catholic",
       "Hindu",
-      "Budha",
-      "Konghucu", 
+      "Buddhism",
+      "Confucianism", 
     ];
 }
