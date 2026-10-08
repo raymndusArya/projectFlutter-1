@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project1/pages/calculator_page.dart';
-import 'package:project1/pages/registration_page.dart';
-import 'controllers/calculator_controller.dart';
 import 'package:project1/routes.dart';
 
 

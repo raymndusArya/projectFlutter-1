@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Column(
         children: [
           Text(
-            "Form Login " + statusLogin,
+            "Form Login $statusLogin",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,

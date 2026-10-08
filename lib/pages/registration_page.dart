@@ -83,7 +83,7 @@ class RegistrationPage extends StatelessWidget {
                         const SizedBox(height: 16),
                         Obx(
                           () => DropdownButtonFormField<String>(
-                            value: controller.jenisKelamin.value,
+                            initialValue: controller.jenisKelamin.value,
                             isExpanded: true,
                             hint: const Text("Please Select Your Gender"),
                             decoration: InputDecoration(
@@ -124,7 +124,7 @@ class RegistrationPage extends StatelessWidget {
                         SizedBox(height: 10),
                         Obx(
                           () => DropdownButtonFormField<String>(
-                            value: controller.agama.value,
+                            initialValue: controller.agama.value,
                             hint: Text("Please Select Your Religion"),
                             isExpanded: true,
                             decoration: InputDecoration(
