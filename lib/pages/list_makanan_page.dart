@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project1/controllers/list_makanan_controller.dart';
 import 'package:project1/routes.dart';
-import 'package:project1/components/custom_card.dart';
+import 'package:project1/components/makanan_card.dart';
+
 
 class ListMakananPage extends StatelessWidget {
   ListMakananPage({super.key});

@@ -21,99 +21,71 @@ class DetailMakananPage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: bgColor,
         foregroundColor: Colors.white,
-        elevation: 0,
       ),
-      body: SingleChildScrollView(
+      body: ListView(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Gambar
-            ClipRRect(
+        children: [
+          // Tempat Gambar
+          Container(
+            height: 200,
+            margin: const EdgeInsets.only(bottom: 16),
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
-              child: AspectRatio(
-                aspectRatio: 16 / 9,
-                child: Image.asset(
-                  makanan.gambar,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
+              image: DecorationImage(
+                image: AssetImage(makanan.gambar),
+                fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(height: 16),
+          ),
 
-            // Alignment nama dan rating
-            IntrinsicHeight(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(
-                    child: SectionCard(
-                      title: 'Nama',
-                      child: Text(
-                        makanan.namaMakanan,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+          // untuk menampilkan informasi makanan
+          CustomSectionCard(
+            title: 'Informasi',
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  makanan.namaMakanan,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
-                  const SizedBox(width: 12),
-                  SizedBox(
-                    width: 110,
-                    child: SectionCard(
-                      title: 'Rating',
-                      child: Row(
-                        children: [
-                          const Icon(Icons.star, color: Colors.amber, size: 22),
-                          const SizedBox(width: 4),
-                          Text(
-                            makanan.rating,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
+                ),
+                Row(
+                  children: [
+                    const Icon(Icons.star, color: Colors.amber),
+                    Text(
+                      makanan.rating,
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 12),
-
-            // Harga
-            SectionCard(
-              title: 'Harga',
-              child: Text(
-                makanan.harga,
-                style: const TextStyle(
-                  fontSize: 20,
-                  color: Colors.lightGreenAccent,
-                  fontWeight: FontWeight.w600,
+                  ],
                 ),
-              ),
+              ],
             ),
-            const SizedBox(height: 12),
+          ),
 
-            // Deskripsi
-            SectionCard(
-              title: 'Deskripsi',
-              child: Text(
-                makanan.deskripsi,
-                style: const TextStyle(
-                  fontSize: 15,
-                  height: 1.5,
-                  color: Colors.white70,
-                ),
+          // Harga
+          CustomSectionCard(
+            title: 'Harga',
+            child: Text(
+              makanan.harga,
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.lightGreenAccent,
               ),
             ),
-          ],
-        ),
+          ),
+
+          // Deskripsi
+          CustomSectionCard(
+            title: 'Deskripsi',
+            child: Text(
+              makanan.deskripsi,
+              style: const TextStyle(fontSize: 15, color: Colors.white70),
+            ),
+          ),
+        ],
       ),
     );
   }

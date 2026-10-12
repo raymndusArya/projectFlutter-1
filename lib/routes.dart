@@ -5,7 +5,6 @@ import 'package:project1/pages/registration_page.dart';
 import 'package:project1/pages/kalkulator_page.dart';
 import 'package:project1/pages/list_makanan_page.dart';
 import 'package:project1/pages/detail_makanan_pages.dart';
-import 'package:project1/controllers/detail_makanan_controller.dart';
 
 class Routes {
   static String registration = "/registration";
@@ -21,12 +20,6 @@ class Routes {
     GetPage(name: calculator, page: () => CalculatorPage()),
     GetPage(name: kalkulator, page: () => KalkulatorPage()),
     GetPage(name: listMakanan, page: () => ListMakananPage()),
-    GetPage(
-      name: detailMakanan,
-      page: () => DetailMakananPage(),
-      binding: BindingsBuilder(() {
-        Get.lazyPut(() => DetailMakananController());
-      }),
-    ),
+    GetPage(name: detailMakanan, page: () => DetailMakananPage()),
   ];
 }
