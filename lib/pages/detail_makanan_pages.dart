@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project1/models/makanan_model.dart';
+import 'package:project1/components/custom_section_card.dart';
+import 'package:project1/controllers/detail_makanan_controller.dart';
 
 class DetailMakananPage extends StatelessWidget {
-   DetailMakananPage ({super.key});
+  DetailMakananPage({super.key});
 
-  final MakananModel makanan = Get.arguments as MakananModel;
+  final controller = Get.put(DetailMakananController());
 
   static const Color bgColor = Color(0xFF2B2B2B);
-  static const Color cardColor = Color(0xFF3A3A3A);
 
   @override
   Widget build(BuildContext context) {
+    final makanan = controller.makanan;
+
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
@@ -40,15 +42,14 @@ class DetailMakananPage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
 
-            // Nama (kiri) dan Rating (kanan)
+            // Alignment nama dan rating
             IntrinsicHeight(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
-                    child: _SectionCard(
+                    child: SectionCard(
                       title: 'Nama',
-                      cardColor: cardColor,
                       child: Text(
                         makanan.namaMakanan,
                         style: const TextStyle(
@@ -62,9 +63,8 @@ class DetailMakananPage extends StatelessWidget {
                   const SizedBox(width: 12),
                   SizedBox(
                     width: 110,
-                    child: _SectionCard(
+                    child: SectionCard(
                       title: 'Rating',
-                      cardColor: cardColor,
                       child: Row(
                         children: [
                           const Icon(Icons.star, color: Colors.amber, size: 22),
@@ -87,9 +87,8 @@ class DetailMakananPage extends StatelessWidget {
             const SizedBox(height: 12),
 
             // Harga
-            _SectionCard(
+            SectionCard(
               title: 'Harga',
-              cardColor: cardColor,
               child: Text(
                 makanan.harga,
                 style: const TextStyle(
@@ -102,9 +101,8 @@ class DetailMakananPage extends StatelessWidget {
             const SizedBox(height: 12),
 
             // Deskripsi
-            _SectionCard(
+            SectionCard(
               title: 'Deskripsi',
-              cardColor: cardColor,
               child: Text(
                 makanan.deskripsi,
                 style: const TextStyle(
@@ -115,50 +113,6 @@ class DetailMakananPage extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class _SectionCard extends StatelessWidget {
-  final String title;
-  final Widget child;
-  final Color cardColor;
-
-  const _SectionCard({
-    required this.title,
-    required this.child,
-    required this.cardColor,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: Card(
-        color: cardColor,
-        elevation: 0,
-        margin: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white54,
-                  letterSpacing: 0.5,
-                ),
-              ),
-              const Divider(height: 20, color: Colors.white24),
-              child,
-            ],
-          ),
         ),
       ),
     );
