@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project1/routes.dart';
+import 'package:project1/pages/list_makanan_page.dart';
 
 
 void main () {
@@ -15,7 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
        title: 'Belajar Flutter Raymundus Arya',
-       initialRoute: Routes.registration,
+       initialRoute: Routes.listMakanan,
+       debugShowCheckedModeBanner: false,
+       theme: ThemeData(
+         fontFamily: 'Poppins',
+       ),
        getPages: Routes.myPages,
     );
   }
