@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:project1/models/makanan_model.dart';
 
 class DetailMakananPage extends StatelessWidget {
-  final MakananModel makanan;
+   DetailMakananPage ({super.key});
 
-  const DetailMakananPage({super.key, required this.makanan});
+  final MakananModel makanan = Get.arguments as MakananModel;
 
   static const Color bgColor = Color(0xFF2B2B2B);
   static const Color cardColor = Color(0xFF3A3A3A);

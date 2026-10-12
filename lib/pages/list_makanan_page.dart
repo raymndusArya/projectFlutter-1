@@ -34,11 +34,13 @@ class ListMakananPage extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
+
             child: InkWell(
               borderRadius: BorderRadius.circular(12),
               onTap: () {
-                Get.to(() => DetailMakananPage(makanan: makanan));
+                Get.toNamed('/detail-makanan', arguments: makanan);
               },
+
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Row(
@@ -68,8 +70,11 @@ class ListMakananPage extends StatelessWidget {
                           const SizedBox(height: 4),
                           Row(
                             children: [
-                              const Icon(Icons.star,
-                                  color: Colors.amber, size: 16),
+                              const Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                                size: 16,
+                              ),
                               const SizedBox(width: 4),
                               Text(
                                 makanan.rating,
