@@ -27,22 +27,26 @@ class CustomMakananCard extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: Row(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.asset(
-                  makanan.gambar,
-                  width: 80,
-                  height: 80,
-                  fit: BoxFit.cover,
+              Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                    image: AssetImage(makanan.gambar),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               const SizedBox(width: 12),
-              Expanded(
+              Flexible(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       makanan.namaMakanan,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -71,6 +75,7 @@ class CustomMakananCard extends StatelessWidget {
                   ],
                 ),
               ),
+              const Spacer(),
               const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 16,

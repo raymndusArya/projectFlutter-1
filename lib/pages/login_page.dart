@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project1/components/custom_textfield.dart';
+
 import '../components/custom_operator_button.dart';
 
 class LoginPage extends StatefulWidget {
@@ -54,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
 
-          CustomButton(
+          CustomButtonOperator(
             myText: "Login Here",
             onPressed: () {
               setState(() {
@@ -62,7 +63,6 @@ class _LoginPageState extends State<LoginPage> {
                 String password = txtPassword.text.toString();
 
                 if (username == "admin" && password == "admin") {
-                  
                   statusLogin = "admin";
                   print("sukses login");
                 } else {

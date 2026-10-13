@@ -87,14 +87,14 @@ class CalculatorPage extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: CustomButton(
+                            child: CustomButtonOperator(
                               onPressed: () => _proses(controller.tambah),
                               myText: "Tambah",
                             ),
                           ),
                           const SizedBox(width: 10),
                           Expanded(
-                            child: CustomButton(
+                            child: CustomButtonOperator(
                               onPressed: () => _proses(controller.kurang),
                               myText: "Kurang",
                             ),
@@ -105,14 +105,14 @@ class CalculatorPage extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: CustomButton(
+                            child: CustomButtonOperator(
                               onPressed: () => _proses(controller.kali),
                               myText: "Kali",
                             ),
                           ),
                           const SizedBox(width: 10),
                           Expanded(
-                            child: CustomButton(
+                            child: CustomButtonOperator(
                               onPressed: () => _proses(controller.bagi),
                               myText: "Bagi",
                             ),

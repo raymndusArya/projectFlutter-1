@@ -4,7 +4,11 @@ class CustomSectionCard extends StatelessWidget {
   final String title;
   final Widget child;
 
-  const CustomSectionCard({super.key, required this.title, required this.child});
+  const CustomSectionCard({
+    super.key,
+    required this.title,
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {

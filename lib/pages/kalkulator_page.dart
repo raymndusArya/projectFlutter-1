@@ -62,19 +62,19 @@ class _KalkulatorPageState extends State<KalkulatorPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CustomButton(
+              CustomButtonOperator(
                 myText: "+",
                 onPressed: () {},
               ),
-              CustomButton(
+              CustomButtonOperator (
                 myText: "-",
                 onPressed: () {},
               ),
-              CustomButton(
+              CustomButtonOperator(
                 myText: "*",
                 onPressed: () {},
               ),
-              CustomButton(
+              CustomButtonOperator(
                 myText: "/",
                 onPressed: () {},
               ),

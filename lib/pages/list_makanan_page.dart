@@ -4,7 +4,6 @@ import 'package:project1/controllers/list_makanan_controller.dart';
 import 'package:project1/routes.dart';
 import 'package:project1/components/custom_makanan_card.dart';
 
-
 class ListMakananPage extends StatelessWidget {
   ListMakananPage({super.key});
 
