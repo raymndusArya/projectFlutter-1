@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:project1/models/makanan_model.dart';
 
-class MakananCard extends StatelessWidget {
+class CustomMakananCard extends StatelessWidget {
   final MakananModel makanan;
   final VoidCallback onTap;
   final Color cardColor;
 
-  const MakananCard({
+  const CustomMakananCard({
     super.key,
     required this.makanan,
     required this.onTap,

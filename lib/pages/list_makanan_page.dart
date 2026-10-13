@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project1/controllers/list_makanan_controller.dart';
 import 'package:project1/routes.dart';
-import 'package:project1/components/makanan_card.dart';
+import 'package:project1/components/custom_makanan_card.dart';
 
 
 class ListMakananPage extends StatelessWidget {
@@ -28,7 +28,7 @@ class ListMakananPage extends StatelessWidget {
         itemCount: controller.makananList.length,
         itemBuilder: (context, index) {
           final makanan = controller.makananList[index];
-          return MakananCard(
+          return CustomMakananCard(
             makanan: makanan,
             onTap: () {
               Get.toNamed(Routes.detailMakanan, arguments: makanan);
