@@ -3,12 +3,12 @@ import 'package:get/get.dart';
 import 'package:project1/components/custom_section_card.dart';
 import 'package:project1/controllers/detail_makanan_controller.dart';
 
-class DetailMakananPage extends StatelessWidget {
-  DetailMakananPage({super.key});
+class DetailMakananPages extends StatelessWidget {
+  DetailMakananPages({super.key});
 
   final controller = Get.put(DetailMakananController());
 
-  static const Color bgColor = Color(0xFF2B2B2B);
+  static Color bgColor = Color(0xFF2B2B2B);
 
   @override
   Widget build(BuildContext context) {
@@ -17,36 +17,36 @@ class DetailMakananPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        title: const Text('Detail Makanan'),
+        title: Text('Detail Makanan'),
         centerTitle: true,
         backgroundColor: bgColor,
         foregroundColor: Colors.white,
       ),
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         children: [
           // Tempat Gambar
           Container(
             height: 200,
-            margin: const EdgeInsets.only(bottom: 16),
+            margin: EdgeInsets.only(bottom: 16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               image: DecorationImage(
-                image: AssetImage(makanan.gambar),
+                image: AssetImage(controller.makanan.gambar),
                 fit: BoxFit.cover,
               ),
             ),
           ),
 
-          // untuk menampilkan informasi makanan
+          // buat nampilin detail
           CustomSectionCard(
             title: 'Informasi',
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  makanan.namaMakanan,
-                  style: const TextStyle(
+                  controller.makanan.namaMakanan,
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -54,10 +54,10 @@ class DetailMakananPage extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    const Icon(Icons.star, color: Colors.amber),
+                    Icon(Icons.star, color: Colors.amber),
                     Text(
-                      makanan.rating,
-                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                      controller.makanan.rating,
+                      style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
                   ],
                 ),
@@ -65,24 +65,24 @@ class DetailMakananPage extends StatelessWidget {
             ),
           ),
 
-          // Harga
+          // Harga di detail
           CustomSectionCard(
             title: 'Harga',
             child: Text(
-              makanan.harga,
-              style: const TextStyle(
+              controller.makanan.harga,
+              style: TextStyle(
                 fontSize: 20,
-                color: Colors.lightGreenAccent,
+                color: Color.fromARGB(255, 252, 252, 252),
               ),
             ),
           ),
 
-          // Deskripsi
+          // Deskripsi di detail
           CustomSectionCard(
             title: 'Deskripsi',
             child: Text(
-              makanan.deskripsi,
-              style: const TextStyle(fontSize: 15, color: Colors.white70),
+              controller.makanan.deskripsi,
+              style: TextStyle(fontSize: 15, color: Colors.white70),
             ),
           ),
         ],

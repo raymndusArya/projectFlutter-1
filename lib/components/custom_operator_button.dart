@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CustomButtonOperator extends StatelessWidget {
+class CustomOperatorButton extends StatelessWidget {
   final String myText;
   final VoidCallback onPressed;
 
-  const CustomButtonOperator({
+  const CustomOperatorButton({
     super.key,
     required this.myText,
     required this.onPressed,
@@ -16,7 +16,7 @@ class CustomButtonOperator extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color.fromARGB(255, 13, 150, 255),
-      ),  
+      ),
       child: Text(
         myText,
         style: const TextStyle(

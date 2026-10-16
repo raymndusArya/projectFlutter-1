@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
 
-          CustomButtonOperator(
+          CustomOperatorButton(
             myText: "Login Here",
             onPressed: () {
               setState(() {

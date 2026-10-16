@@ -20,6 +20,6 @@ class Routes {
     GetPage(name: calculator, page: () => CalculatorPage()),
     GetPage(name: kalkulator, page: () => KalkulatorPage()),
     GetPage(name: listMakanan, page: () => ListMakananPage()),
-    GetPage(name: detailMakanan, page: () => DetailMakananPage()),
+    GetPage(name: detailMakanan, page: () => DetailMakananPages()),
   ];
 }

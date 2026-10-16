@@ -14,7 +14,7 @@ class ConfirmRegistrationPage extends StatelessWidget {
         children: [
           Icon(icon, color: Colors.indigo),
           SizedBox(width: 12),
-          Expanded(
+          Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

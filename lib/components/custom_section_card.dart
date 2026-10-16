@@ -13,22 +13,22 @@ class CustomSectionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color(0xFF3A3A3A),
-      margin: const EdgeInsets.only(bottom: 12),
+      color: Color(0xFF3A3A3A),
+      margin: EdgeInsets.only(bottom: 12),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
                 color: Colors.white54,
               ),
             ),
-            const Divider(color: Colors.white24),
+            Divider(color: Colors.white24),
             child,
           ],
         ),

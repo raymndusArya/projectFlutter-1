@@ -16,14 +16,14 @@ class ListMakananPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        title: const Text('List Makanan'),
+        title: Text('List Makanan'),
         centerTitle: true,
         backgroundColor: bgColor,
         foregroundColor: Colors.white,
         elevation: 0,
       ),
       body: ListView.builder(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(12),
         itemCount: controller.makananList.length,
         itemBuilder: (context, index) {
           final makanan = controller.makananList[index];
