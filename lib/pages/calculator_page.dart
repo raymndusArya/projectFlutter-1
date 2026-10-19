@@ -103,7 +103,7 @@ class CalculatorPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
 
-                    // baris tombol 2
+                    // baris tombol yang bawah
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [

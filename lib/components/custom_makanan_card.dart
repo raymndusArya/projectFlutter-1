@@ -3,13 +3,13 @@ import 'package:project1/models/makanan_model.dart';
 
 class CustomMakananCard extends StatelessWidget {
   final MakananModel makanan;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final Color cardColor;
 
   const CustomMakananCard({
     super.key,
     required this.makanan,
-    required this.onTap,
+    this.onTap,
     this.cardColor = const Color(0xFF3A3A3A),
   });
 
@@ -41,33 +41,23 @@ class CustomMakananCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         makanan.namaMakanan,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(height: 4),
-                      Row(
-                        children: [
-                          const Icon(Icons.star, color: Colors.amber, size: 16),
-                          const SizedBox(width: 4),
-                          Text(
-                            makanan.rating,
-                            style: const TextStyle(color: Colors.white70),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 4),
+                      SizedBox(height: 4),
+
                       Text(
                         makanan.harga,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Color.fromARGB(255, 191, 193, 190),
                           fontWeight: FontWeight.w600,
                         ),
@@ -76,7 +66,7 @@ class CustomMakananCard extends StatelessWidget {
                   ),
                 ],
               ),
-              const Icon(
+              Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 16,
                 color: Colors.white54,
