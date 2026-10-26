@@ -29,23 +29,12 @@ class ListMakananPage extends StatelessWidget {
             itemCount: controller.makananList.length,
             itemBuilder: (context, index) {
               final makanan = controller.makananList[index];
-              return Dismissible(
-                key: Key(makanan.namaMakanan),
-                direction: DismissDirection.startToEnd,
-                background: Container(
-                  margin: const EdgeInsets.only(bottom: 12),
-                  color: Colors.red,
-                  alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.only(left: 20),
-                  child: const Icon(Icons.delete, color: Colors.white),
-                ),
-                onDismissed: (_) => controller.makananList.removeAt(index),
-                child: CustomMakananCard(
-                  makanan: makanan,
-                  onTap: () {
-                    Get.toNamed(Routes.detailMakanan, arguments: makanan);
-                  },
-                ),
+
+              return CustomMakananCard(
+                makanan: makanan,
+                onTap: () {
+                  Get.toNamed(Routes.detailMakanan, arguments: makanan);
+                },
               );
             },
           ),
