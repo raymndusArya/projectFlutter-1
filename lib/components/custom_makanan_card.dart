@@ -21,6 +21,9 @@ class CustomMakananCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
+        splashColor: Colors.white38,
+        highlightColor: Colors.white24,
+        splashFactory: InkRipple.splashFactory,
         borderRadius: BorderRadius.circular(12),
         onTap: onTap,
         child: Padding(
@@ -30,7 +33,7 @@ class CustomMakananCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Container(
+                  Ink(
                     width: 80,
                     height: 80,
                     decoration: BoxDecoration(

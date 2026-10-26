@@ -66,5 +66,5 @@ class ListMakananController extends GetxController {
       gambar: 'lib/Assets/batagor.jpg',
       deskripsi: 'Batagor adalah makanan yang terbuat dari kulit ikan yang digoreng dan disajikan dengan saus kacang.',
     ),
-  ];
+  ].obs;
 }
