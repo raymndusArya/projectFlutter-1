@@ -39,7 +39,7 @@ class ProfilPage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
 
-          // nama dan online
+          // nama dan status
           const Center(
             child: Text(
               'Nama Pengguna',
