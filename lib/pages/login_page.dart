@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:project1/components/custom_textfield.dart';
-import 'package:project1/controllers/login_controller.dart';
 
 import '../components/custom_operator_button.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
-  final controller = Get.put(LoginController());
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController txtUsername = TextEditingController();
+  TextEditingController txtPassword = TextEditingController();
+  String statusLogin = "";
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +31,7 @@ class LoginPage extends StatelessWidget {
       body: Column(
         children: [
           Text(
-            "Form Login",
+            "Form Login $statusLogin",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -38,8 +43,7 @@ class LoginPage extends StatelessWidget {
             margin: EdgeInsets.all(10),
             child: CustomTextfield(
               myHint: "Input Username",
-              txtController: controller.txtUsername,
-              icon: Icons.person,
+              txtController: txtUsername,
             ),
           ),
 
@@ -47,21 +51,26 @@ class LoginPage extends StatelessWidget {
             margin: EdgeInsets.all(10),
             child: CustomTextfield(
               myHint: "Input Password",
-              txtController: controller.txtPassword,
-              isPassword: true,
-              icon: Icons.lock,
+              txtController: txtPassword,
             ),
           ),
 
-          Obx(
-            () => controller.isLoading.value
-                ? CircularProgressIndicator()
-                : CustomOperatorButton(
-                    myText: "Login Here",
-                    onPressed: () {
-                      controller.login();
-                    },
-                  ),
+          CustomOperatorButton(
+            myText: "Login Here",
+            onPressed: () {
+              setState(() {
+                String username = txtUsername.text.toString();
+                String password = txtPassword.text.toString();
+
+                if (username == "admin" && password == "admin") {
+                  statusLogin = "admin";
+                  print("sukses login");
+                } else {
+                  statusLogin = "failed";
+                  print("gagal login");
+                }
+              });
+            },
           ),
         ],
       ),

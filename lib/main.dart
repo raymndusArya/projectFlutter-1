@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Belajar Flutter Raymundus Arya',
-      initialRoute: Routes.loginPage,
+      initialRoute: Routes.loginPageClone,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Poppins'),
+      theme: ThemeData(fontFamily: 'SFUI'),
       getPages: Routes.myPages,
     );
   }

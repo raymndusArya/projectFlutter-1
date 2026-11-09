@@ -68,10 +68,15 @@ flutter:
     - lib/Assets/mieTelur.jpg
     - lib/Assets/NasiAyam.png
     - lib/Assets/katsu.jpg
+    - lib/Assets/apple_music.png
+
   fonts:
     - family: Poppins
       fonts:
         - asset: lib/Assets/fonts/Poppins-Medium.ttf
+    - family: SFUI
+      fonts:
+        - asset: lib/Assets/fonts/SFUIDisplay-Regular.otf
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
